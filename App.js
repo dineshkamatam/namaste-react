@@ -1,14 +1,18 @@
-import React from 'react'
-import reactDom from 'react-dom'
+import React from 'react';
+import ReactDOM from 'react-dom/client';
 
-export default function App() {
-  return (
-    <div>
-        <h1>sadfasd</h1>
-    </div>
+const Child = () => <h1>this is child component 🚀</h1>
+
+const Heading = () => {
+  return ( <div>
+    {Child()}
+    <Child/>
+    <h1>hello mydear beautiful people</h1>
+  </div>
   )
 }
 
-const root = reactDom.createRoot(document.getElementById("root"))
 
-root.render(<App/>)
+const root = ReactDOM.createRoot(document.getElementById('root'));
+
+root.render(<Heading />);
